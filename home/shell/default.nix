@@ -2,7 +2,9 @@
 {
   imports = [
     ./terminals.nix
-    #   ./zsh.nix
+    ./zsh.nix
+    ./ohmyposh
+    ./tmux.nix
   ];
 
   home.sessionVariables = {
