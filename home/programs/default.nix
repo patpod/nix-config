@@ -5,8 +5,6 @@
     fzf
     # GNU C Compiler
     gcc
-    # Ghostty terminal emulator
-    ghostty
     # GNU Make build tool
     gnumake
     # The Lua programming language (5.1 because that's what neovim wants)

@@ -1,8 +1,9 @@
 { config, ... }:
 {
-  # imports = [
-  #   ./zsh.nix
-  # ];
+  imports = [
+    ./terminals.nix
+    #   ./zsh.nix
+  ];
 
   home.sessionVariables = {
     # set default applications

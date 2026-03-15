@@ -7,10 +7,16 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    {
+      nixpkgs,
+      home-manager,
+      ghostty,
+      ...
+    }:
     {
 
       nixosConfigurations.hex = nixpkgs.lib.nixosSystem {
@@ -22,7 +28,8 @@
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-
+              backupFileExtension = "backup";
+              extraSpecialArgs = { inherit ghostty; };
               users.patrick = import ./home/home.nix;
             };
           }
