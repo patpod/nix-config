@@ -7,6 +7,8 @@
     gcc
     # GNU Make build tool
     gnumake
+    # lazygit Git TUI
+    lazygit
     # The Lua programming language (5.1 because that's what neovim wants)
     lua5_1
     # Lua package manager
