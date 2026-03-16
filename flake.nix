@@ -7,6 +7,7 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Ghostty official flake
     ghostty.url = "github:ghostty-org/ghostty";
   };
 
@@ -14,9 +15,8 @@
     {
       nixpkgs,
       home-manager,
-      ghostty,
       ...
-    }:
+    }@inputs:
     {
 
       nixosConfigurations.hex = nixpkgs.lib.nixosSystem {
@@ -29,7 +29,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "backup";
-              extraSpecialArgs = { inherit ghostty; };
+              extraSpecialArgs = { inherit inputs; };
               users.patrick = import ./home/home.nix;
             };
           }
