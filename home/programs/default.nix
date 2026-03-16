@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # Bitwarden password manager
+    bitwarden-desktop
     # Commandline fuzzy finder
     fzf
     # GNU C Compiler
