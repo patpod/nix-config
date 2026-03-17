@@ -9,6 +9,11 @@
     };
     # Ghostty official flake
     ghostty.url = "github:ghostty-org/ghostty";
+    # Secret management
+    sops-nix = {
+      url = "github:mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -30,7 +35,7 @@
               useUserPackages = true;
               backupFileExtension = "backup";
               extraSpecialArgs = { inherit inputs; };
-              users.patrick = import ./home/home.nix;
+              users.patrick = import ./home/patrick/hex;
             };
           }
         ];
