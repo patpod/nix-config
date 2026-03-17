@@ -1,6 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    # age ecryption tool
+    age
     # Bitwarden password manager
     bitwarden-desktop
     # Commandline fuzzy finder
@@ -27,6 +29,8 @@
     rustup
     # Signal messenger
     signal-desktop
+    # SOPS secret management
+    sops
     # Nix linter
     statix
     # Lua code formatter
