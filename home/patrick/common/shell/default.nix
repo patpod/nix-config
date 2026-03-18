@@ -13,4 +13,10 @@
     BROWSER = "vivaldi";
     TERMINAL = "ghostty";
   };
+
+  # --- Terminal tools ---
+  programs.yazi = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
