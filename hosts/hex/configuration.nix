@@ -25,6 +25,13 @@
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # Essential for AMD Zen 5 / AI 300 support
+  hardware.enableRedistributableFirmware = true;
+  hardware.cpu.amd.updateMicrocode = true;
+
+  # Framework-specific settings
+  services.fwupd.enable = true;
+
   networking.hostName = "hex"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

@@ -2,9 +2,9 @@
   description = "Patrick's System Configuration Flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # Ghostty official flake
@@ -14,22 +14,27 @@
       url = "github:mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # NixOS hardware support
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
     {
       nixpkgs,
       home-manager,
+      nixos-hardware,
       ...
     }@inputs:
     {
 
       nixosConfigurations.hex = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
-
         modules = [
           ./hosts/hex/configuration.nix
-
+          nixos-hardware.nixosModules.framework-amd-ai-300-series
           home-manager.nixosModules.home-manager
           {
             home-manager = {
