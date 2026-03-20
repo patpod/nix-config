@@ -1,0 +1,13 @@
+keys:
+  - &patrick age1v3fks8crfh4a8m5tszhdr977ckzedg9ak3f6hhwtjkmr58665fgsqs080u
+  - &hex age1gtas007jwe53cj29uv39munnnk322qy5rdqd6mhula0jz4nwffcsh4jft2
+creation_rules:
+  - path_regex: home/patrick/common/secrets.yaml$
+    key_groups:
+      - age:
+          - *patrick
+  - path_regex: hosts/hex/secrets.yaml$
+    key_groups:
+      - age:
+          - *hex
+
