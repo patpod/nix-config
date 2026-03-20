@@ -8,6 +8,7 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ./bluetooth.nix
     ./sops.nix
     ./tailscale.nix
   ];
