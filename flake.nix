@@ -30,7 +30,7 @@
       nixosConfigurations.hex = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [
-          ./hosts/hex/configuration.nix
+          ./hosts/hex
           nixos-hardware.nixosModules.framework-amd-ai-300-series
           home-manager.nixosModules.home-manager
           {
