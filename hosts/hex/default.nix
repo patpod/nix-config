@@ -9,6 +9,7 @@
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./network.nix
+    ./xdg.nix
     ./sddm.nix
     ../common/optional/desktops/plasma.nix
     ./bluetooth.nix
