@@ -10,6 +10,7 @@
     ./hardware-configuration.nix
     ./network.nix
     ./sddm.nix
+    ../common/optional/desktops/plasma.nix
     ./bluetooth.nix
     ./sops.nix
     ./tailscale.nix
