@@ -1,6 +1,9 @@
 { self, inputs, ... }:
 {
   flake.nixosConfigurations.hex = inputs.nixpkgs.lib.nixosSystem {
-    modules = [ self.nixosModules.hexConfiguration ];
+    modules = [
+      inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
+      self.nixosModules.hexConfiguration
+    ];
   };
 }
