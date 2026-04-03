@@ -6,6 +6,13 @@
       self.nixosModules.hexConfiguration
       self.nixosModules.patrick
       self.nixosModules.bluetooth
+      self.nixosModules.sops
+      self.nixosModules.tailscale
+      {
+        # The host specific secrets file
+        sops.defaultSopsFile = ./secrets.yaml;
+      }
     ];
+
   };
 }
