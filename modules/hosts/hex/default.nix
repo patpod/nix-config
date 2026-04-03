@@ -5,6 +5,7 @@
       inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
       self.nixosModules.hexConfiguration
       self.nixosModules.patrick
+      self.nixosModules.bluetooth
     ];
   };
 }
