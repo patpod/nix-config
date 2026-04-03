@@ -14,8 +14,16 @@
 
     # NixOS hardware support
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    # Home-Manager
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # Ghostty official flake
-    ghostty.url = "github:ghostty-org/ghostty";
+    ghostty = {
+      url = "github:ghostty-org/ghostty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -23,6 +31,7 @@
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
 
       imports = [
+        inputs.home-manager.flakeModules.home-manager
         (inputs.import-tree ./modules)
       ];
 
