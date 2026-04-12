@@ -61,7 +61,7 @@
         # Vivaldi browser
         # force-device-scale-factor=1 makes sure the browser is scale properly and does not appear huge on the screen.
         (vivaldi.override {
-          commandLineArgs = "--ozone-platform=wayland --enable-features=useOzonePlatform,WaylandFractionalScaleV1 --force-device-scale-factor=1, --password-store=gnome";
+          commandLineArgs = "--ozone-platform=wayland --enable-features=useOzonePlatform,WaylandFractionalScaleV1 --force-device-scale-factor=1 --password-store=gnome";
         })
       ];
 
