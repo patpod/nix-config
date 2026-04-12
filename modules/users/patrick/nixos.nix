@@ -30,9 +30,21 @@
       home-manager.users."${username}" = {
         imports = [
           inputs.self.homeModules.patrick
+          inputs.self.homeModules.niri
+          inputs.self.homeModules.hyprlock
         ];
         home.username = "${username}";
         home.homeDirectory = "/home/${username}";
+
+        # NixOS specific packages
+        home.packages = with pkgs; [
+          vlc
+        ];
+
+        services.gnome-keyring = {
+          enable = true;
+          components = [ "secrets" ];
+        };
       };
     };
 }
