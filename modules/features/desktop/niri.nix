@@ -13,6 +13,23 @@
           prefer-no-csd = true;
 
           spawn-at-startup = [
+            # TODO: Clarify if this is really needed.
+            # Inject ALL environment variables (including PAM keyring tokens) into systemd and D-Bus
+            {
+              command = [
+                "systemctl"
+                "--user"
+                "import-environment"
+              ];
+            }
+            {
+              command = [
+                "dbus-update-activation-environment"
+                "--systemd"
+                "--all"
+              ];
+            }
+            # Enable Noctalia Shell
             { command = [ "noctalia-shell" ]; }
             # Launch polkit authentication agent
             { command = [ "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1" ]; }

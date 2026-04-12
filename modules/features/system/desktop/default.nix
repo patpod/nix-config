@@ -17,8 +17,6 @@
 
       security = {
         pam = {
-          # Tell SDDM to automatically unlock the keyring on login
-          services.sddm.enableGnomeKeyring = true;
           # Enbale hyprlock lock screen but disable the fingerprint reader
           # pam authentication. We will use hyprlocks native functionality
           # on home-manager level
