@@ -54,10 +54,15 @@
         statix
         # Lua code formatter
         stylua
-        # Tool to produce a depth indented directory listing
-        unzip
+        # rar archive support
+        unrar
+        # archving tool
+        peazip
         # Vivaldi browser
-        vivaldi
+        # force-device-scale-factor=1 makes sure the browser is scale properly and does not appear huge on the screen.
+        (vivaldi.override {
+          commandLineArgs = "--ozone-platform=wayland --enable-features=useOzonePlatform,WaylandFractionalScaleV1 --force-device-scale-factor=1, --password-store=gnome";
+        })
       ];
 
       home.stateVersion = "25.11";

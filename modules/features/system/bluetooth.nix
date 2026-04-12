@@ -17,5 +17,8 @@
       };
     };
 
+    # Bluetooth control from within niri
+    services.blueman.enable = true;
+
   };
 }
