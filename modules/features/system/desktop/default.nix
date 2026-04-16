@@ -6,8 +6,7 @@
     {
 
       imports = [
-        self.nixosModules.sddm
-        self.nixosModules.kde
+        self.nixosModules.greetd
         self.nixosModules.niri
       ];
 
