@@ -12,6 +12,10 @@
         settings = {
           prefer-no-csd = true;
 
+          hotkey-overlay = {
+            skip-at-startup = true;
+          };
+
           spawn-at-startup = [
             # TODO: Clarify if this is really needed.
             # Inject ALL environment variables (including PAM keyring tokens) into systemd and D-Bus
@@ -68,6 +72,7 @@
             };
 
             "Samsung Electric Company C49RG9x H1AK500000" = {
+              focus-at-startup = true;
               scale = 1.0;
               position = {
                 x = 0;
@@ -86,6 +91,22 @@
             always-center-single-column = true;
             center-focused-column = "on-overflow";
           };
+
+          window-rules = [
+            {
+              clip-to-geometry = true;
+              geometry-corner-radius =
+                let
+                  r = 20.0;
+                in
+                {
+                  top-left = r;
+                  top-right = r;
+                  bottom-left = r;
+                  bottom-right = r;
+                };
+            }
+          ];
 
           binds = {
             "Mod+Shift+Slash".action.show-hotkey-overlay = { };
@@ -133,7 +154,13 @@
             "Mod+Shift+C".action.switch-focus-between-floating-and-tiling = { };
 
             # Lock screen
-            "Mod+Ctrl+Q".action.spawn = [ "hyprlock" ];
+            "Mod+Ctrl+Q".action.spawn = [
+              "noctalia-shell"
+              "ipc"
+              "call"
+              "lockScreen"
+              "lock"
+            ];
 
             # Jump directly to workspaces
             "Mod+1".action.focus-workspace = 1;
