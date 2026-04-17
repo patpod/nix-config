@@ -39,6 +39,8 @@
         # NixOS specific packages
         home.packages = with pkgs; [
           vlc
+          nautilus
+          imv
         ];
 
       };
