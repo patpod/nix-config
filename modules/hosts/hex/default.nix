@@ -11,11 +11,11 @@
       self.nixosModules.desktop
       self.nixosModules.hexFingerprintReader
       self.nixosModules.smbShares
+      self.nixosModules.stylix
       {
         # The host specific secrets file
         sops.defaultSopsFile = ./secrets.yaml;
       }
     ];
-
   };
 }
