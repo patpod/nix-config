@@ -63,6 +63,8 @@
         (vivaldi.override {
           commandLineArgs = "--ozone-platform=wayland --enable-features=useOzonePlatform,WaylandFractionalScaleV1 --force-device-scale-factor=1 --password-store=gnome";
         })
+        # QView image viewer
+        qview
       ];
 
       home.stateVersion = "25.11";
