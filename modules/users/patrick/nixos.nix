@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 {
   flake.nixosModules.patrick =
     {
@@ -31,7 +31,6 @@
         imports = [
           inputs.self.homeModules.patrick
           inputs.self.homeModules.niri
-          inputs.self.homeModules.hyprlock
         ];
         home.username = "${username}";
         home.homeDirectory = "/home/${username}";
