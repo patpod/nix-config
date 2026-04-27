@@ -7,8 +7,6 @@
 
       stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
-      stylix.homeManagerIntegration.autoImport = true;
-
       stylix.fonts = {
         monospace = {
           package = pkgs.nerd-fonts.fira-code;

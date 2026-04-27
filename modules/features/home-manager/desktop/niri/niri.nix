@@ -1,12 +1,19 @@
-{ inputs, ... }:
+{ self, inputs, ... }:
 {
   flake.homeModules.niri =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
+    let
+      colors = config.lib.stylix.colors.withHashtag;
+    in
     {
 
       imports = [
-        inputs.noctalia.homeModules.default
+        self.homeModules.noctalia
       ];
+
+      # Disable implicit stylix styling because we want to use noctalia
+      # for some customizing (e.g., the wallpapers)
+      stylix.targets.niri.enable = false;
 
       programs.niri = {
         settings = {
@@ -90,6 +97,13 @@
           layout = {
             always-center-single-column = true;
             center-focused-column = "on-overflow";
+
+            border = {
+              enable = true;
+              width = 1;
+              active.color = colors.base0D;
+              inactive.color = colors.base03;
+            };
           };
 
           window-rules = [
@@ -217,10 +231,6 @@
             ];
           };
         };
-      };
-
-      programs.noctalia-shell = {
-        enable = true;
       };
     };
 }
