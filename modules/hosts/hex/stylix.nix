@@ -6,6 +6,9 @@
       self.commonModules.gruvbox
     ];
 
-    stylix.enable = true;
+    stylix = {
+      enable = true;
+      homeManagerIntegration.autoImport = true;
+    };
   };
 }
