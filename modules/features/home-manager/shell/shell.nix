@@ -8,6 +8,7 @@
         self.homeModules.ghostty
         self.homeModules.tmux
         self.homeModules.oh-my-posh
+        self.homeModules.fastfetch
       ];
 
       my.programs.ghostty.enable = true;
