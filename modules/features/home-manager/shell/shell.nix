@@ -11,8 +11,6 @@
         self.homeModules.fastfetch
       ];
 
-      my.programs.ghostty.enable = true;
-
       home.packages = with pkgs; [
         # Commandline fuzzy finder
         fzf
