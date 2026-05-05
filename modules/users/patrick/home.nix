@@ -10,6 +10,7 @@
     {
       imports = [
         self.homeModules.shell
+        self.homeModules.pdf
       ];
 
       home.sessionVariables = {
