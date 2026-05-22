@@ -6,6 +6,11 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # nix-wrapper-modules
     wrappers = {
       url = "github:BirdeeHub/nix-wrapper-modules";
@@ -48,6 +53,9 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Homebrew Support
+    nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
 
   outputs =
@@ -61,6 +69,7 @@
 
       systems = [
         "x86_64-linux"
+        "aarch64-darwin"
       ];
     };
 }

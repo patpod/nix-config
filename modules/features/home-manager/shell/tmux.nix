@@ -13,10 +13,10 @@
       home.packages =
         with pkgs;
         [
-          sysstat
           bc
         ]
         ++ lib.optionals stdenv.isLinux [
+          sysstat
           lm_sensors # Required to read the Ryzen CPU temperatures
         ];
 

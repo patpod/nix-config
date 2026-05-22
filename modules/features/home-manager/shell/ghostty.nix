@@ -10,7 +10,11 @@
     {
       programs.ghostty = {
         enable = true;
-        package = inputs.ghostty.packages.${pkgs.system}.default;
+
+        package = if pkgs.stdenv.isDarwin then
+          pkgs.ghostty-bin
+        else
+          inputs.ghostty.packages.${pkgs.system}.default;
       };
     };
 }
