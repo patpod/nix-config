@@ -16,8 +16,8 @@
       sops = {
         defaultSopsFormat = "yaml";
 
-        # This file has to be available before the config
-        # is used
+        # This is the host-specific age key file. It has to be available
+        # before the config is used.
         age.keyFile = "/var/lib/sops/key.text";
       };
     };
