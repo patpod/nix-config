@@ -39,12 +39,6 @@
               "veracrypt"
               "vivaldi"
             ];
-            masApps = {
-              "Daisydisk" = 411643860;
-              "Pixea" = 1507782672;
-              "Magnet" = 441258766;
-              "Bitwarden" = 1352778147;
-            };
           };
         }
       ];

@@ -1,6 +1,6 @@
 { config, lib, ... }: {
 
-  flake.darwinModules.homebrew = { config, ... }:
+  flake.darwinModules.homebrew = { config, pkgs, ... }:
   let
     cfg = config.features.darwin.homebrew;
   in 
@@ -19,13 +19,6 @@
         type = lib.types.listOf lib.types.str;
         default = [];
         description = "List of CLI tools to install via Homebrew formulas (prefer nixpkgs when possible).";
-      };
-
-      masApps = lib.mkOption {
-        type = lib.types.attrsOf lib.types.ints.positive;
-        default = { };
-        description = "Mac App Store apps to install. Dictionary mapping app name to its Apple ID.";
-        example = { "Bitwarden" = 1352778147; };
       };
     };
 
@@ -49,8 +42,8 @@
 
         casks = cfg.casks;
         brews = cfg.brews;
-        masApps = cfg.masApps;
       };
+
     };
   };
 }
