@@ -499,6 +499,22 @@
         "type": "github"
       }
     },
+    "nvim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1779808703,
+        "narHash": "sha256-A0a1Fi8M/fSMP1X6Zbc3Ovl/KRHfOz5kxP5YV2JAcyE=",
+        "owner": "patpod",
+        "repo": "nvim-config",
+        "rev": "1a4f2e98e5fe4e247d570e7dd3bf6f47c246cf42",
+        "type": "github"
+      },
+      "original": {
+        "owner": "patpod",
+        "repo": "nvim-config",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -511,6 +527,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "noctalia": "noctalia",
+        "nvim-config": "nvim-config",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "wrappers": "wrappers"

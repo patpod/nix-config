@@ -26,6 +26,8 @@
         fd
         # Modern ps replacement
         procs
+        # yq - command line yaml processor
+        yq
       ];
 
       # Modern ls replacement
