@@ -16,7 +16,6 @@
         wget
         curl
         tree-sitter
-        nodejs_20
         imagemagick
       ];
 
