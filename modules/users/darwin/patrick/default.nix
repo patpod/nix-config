@@ -17,6 +17,7 @@
           self.homeModules.shell
           self.homeModules.neovim
           self.homeModules.git
+          self.homeModules.nix-dev
         ];
 
         features.home.git = {
@@ -24,6 +25,8 @@
           userName = "Patrick Podbregar";
           userEmail = "patrick.podbregar@bearingpoint.com";
         };
+
+        features.home.nix-dev.enable = true;
 
 
         home.packages = with pkgs; [
