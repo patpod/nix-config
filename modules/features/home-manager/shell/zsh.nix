@@ -1,4 +1,4 @@
-{ self, input, ... }:
+{ self, inputs, ... }:
 {
   flake.homeModules.zsh =
     { config, pkgs, ... }:
