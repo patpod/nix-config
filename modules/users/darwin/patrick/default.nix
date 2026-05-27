@@ -15,6 +15,19 @@
 
         imports = [
           self.homeModules.shell
+          self.homeModules.neovim
+          self.homeModules.git
+        ];
+
+        features.home.git = {
+          enable = true;
+          userName = "Patrick Podbregar";
+          userEmail = "patrick.podbregar@bearingpoint.com";
+        };
+
+
+        home.packages = with pkgs; [
+          stow
         ];
 
         home.stateVersion = "25.11";

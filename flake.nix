@@ -54,6 +54,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # My neovim Configuration
+    nvim-config = {
+      url = "github:patpod/nvim-config";
+      flake = false;
+    };
+
     # Homebrew Support
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
   };
