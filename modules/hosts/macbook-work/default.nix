@@ -1,8 +1,14 @@
-{ self, inputs, lib, ...}: {
+{
+  self,
+  inputs,
+  lib,
+  ...
+}:
+{
 
   options.flake.darwinModules = lib.mkOption {
     type = lib.types.attrs;
-    default = {};
+    default = { };
     description = "A merged set of darwin modules";
   };
 
