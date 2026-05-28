@@ -1,30 +1,33 @@
-{ self, inputs, ...} : {
-  flake.homeModules.neovim = {pkgs,...}:{
+{ self, inputs, ... }:
+{
+  flake.homeModules.neovim =
+    { pkgs, ... }:
+    {
 
-    programs.neovim = {
-      enable = true;
-      defaultEditor = true;
-      
-      extraPackages = with pkgs; [
-        lua
-        lua52Packages.luarocks
-        ripgrep
-        fd
-        gcc
-        gnumake
-        unzip
-        wget
-        curl
-        tree-sitter
-        imagemagick
-      ];
+      programs.neovim = {
+        enable = true;
+        defaultEditor = true;
 
-      # This is done for compatibility with newer home-manager versions
-      withRuby = false;
-      withPython3 = true;
+        extraPackages = with pkgs; [
+          lua
+          lua52Packages.luarocks
+          ripgrep
+          fd
+          gcc
+          gnumake
+          unzip
+          wget
+          curl
+          tree-sitter
+          imagemagick
+        ];
+
+        # This is done for compatibility with newer home-manager versions
+        withRuby = false;
+        withPython3 = true;
+      };
+
+      # Link my neovim config to default config location
+      xdg.configFile."nvim".source = inputs.nvim-config;
     };
-
-    # Link my neovim config to default config location
-    xdg.configFile."nvim".source = inputs.nvim-config;
-  };
 }
