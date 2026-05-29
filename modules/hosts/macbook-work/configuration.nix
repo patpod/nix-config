@@ -8,7 +8,9 @@
       nixpkgs.config.allowUnfree = true;
 
       # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
+      nix.settings = {
+        experimental-features = "nix-command flakes";
+      };
 
       # Enable zsh on system level to make it the default login shell
       programs.zsh.enable = true;

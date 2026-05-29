@@ -1,10 +1,11 @@
-{self, inputs, ...}: {
+{ self, inputs, ... }:
+{
 
   flake.darwinModules.patrick =
     let
       username = "patrick.podbregar";
     in
-    {pkgs, ...} :
+    { pkgs, ... }:
     {
       users.users."${username}" = {
         name = "${username}";
@@ -14,9 +15,11 @@
       home-manager.users."${username}" = {
 
         imports = [
+          self.homeModules.darwin
           self.homeModules.shell
           self.homeModules.neovim
           self.homeModules.git
+          self.homeModules.obsidian
           self.homeModules.nix-dev
         ];
 
@@ -28,7 +31,6 @@
 
         features.home.nix-dev.enable = true;
 
-
         home.packages = with pkgs; [
           stow
         ];
@@ -38,5 +40,5 @@
         # Let Home Manager install and manage itself
         programs.home-manager.enable = true;
       };
-  };
+    };
 }
