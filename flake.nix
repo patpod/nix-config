@@ -62,6 +62,11 @@
 
     # Homebrew Support
     nix-homebrew.url = "github:zhaofengli/nix-homebrew";
+
+    # mac-app-util to make applications available via spotlight
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+    };
   };
 
   outputs =

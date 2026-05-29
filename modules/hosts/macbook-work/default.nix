@@ -16,6 +16,7 @@
     flake.darwinConfigurations."LHQGQ5M2XX" = inputs.nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = { inherit inputs; };
+
       modules = [
         inputs.nix-homebrew.darwinModules.nix-homebrew
         self.darwinModules.homebrew
