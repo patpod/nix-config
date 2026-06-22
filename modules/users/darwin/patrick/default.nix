@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ self, ... }:
 {
 
   flake.darwinModules.patrick =
@@ -21,6 +21,8 @@
           self.homeModules.git
           self.homeModules.obsidian
           self.homeModules.nix-dev
+          self.homeModules.containers
+          self.homeModules.devtools
         ];
 
         features.home.git = {
@@ -30,6 +32,8 @@
         };
 
         features.home.nix-dev.enable = true;
+        features.home.containers.enable = true;
+        features.home.devtools.enable = true;
 
         home.packages = with pkgs; [
           stow
