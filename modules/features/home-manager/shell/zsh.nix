@@ -95,6 +95,7 @@
           # HM already maps ls, ll, la, etc.
           # BUT, defining them here lets you add extra flags like putting directories first!
 
+          l = "eza --icons --group-directories-first";
           ls = "eza --icons --group-directories-first";
           ll = "eza -l -g --icons --group-directories-first"; # Long format
           la = "eza -la -g --icons --group-directories-first"; # Long format + hidden files
