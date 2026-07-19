@@ -1,9 +1,6 @@
 { self, inputs, ... }:
 {
-  flake.homeModules.darwin-common = {
-    imports = [
-      inputs.mac-app-util.homeManagerModules.default
-    ];
+  flake.homeModules.nixos-common = {
 
     home.stateVersion = "25.11";
 

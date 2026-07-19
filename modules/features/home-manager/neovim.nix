@@ -9,8 +9,12 @@
         defaultEditor = true;
 
         extraPackages = with pkgs; [
-          lua
-          lua52Packages.luarocks
+          # The Lua programming language (5.1 because that's what neovim wants)
+          lua5_1
+          # Lua package manager
+          lua51Packages.luarocks
+          # Lua code formatter
+          stylua
           ripgrep
           fd
           gcc

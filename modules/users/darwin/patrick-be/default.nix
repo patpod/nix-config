@@ -1,7 +1,6 @@
 { self, inputs, ... }:
 {
-
-  flake.darwinModules.patrick =
+  flake.darwinModules.patrick-be =
     let
       username = "patrick.podbregar";
     in
@@ -15,7 +14,7 @@
       home-manager.users."${username}" = {
 
         imports = [
-          self.homeModules.darwin
+          self.homeModules.darwin-common
           self.homeModules.shell
           self.homeModules.neovim
           self.homeModules.git
@@ -34,11 +33,6 @@
         home.packages = with pkgs; [
           stow
         ];
-
-        home.stateVersion = "25.11";
-
-        # Let Home Manager install and manage itself
-        programs.home-manager.enable = true;
       };
     };
 }

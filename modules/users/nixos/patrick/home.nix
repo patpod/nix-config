@@ -1,6 +1,6 @@
 { self, ... }:
 {
-  flake.homeModules.patrick =
+  flake.homeModules.patrick-nixos =
     {
       config,
       lib,
@@ -10,6 +10,12 @@
     {
       imports = [
         self.homeModules.shell
+        self.homeModules.pdf
+        self.homeModules.niri
+        self.homeModules.neovim
+        self.homeModules.git
+        self.homeModules.obsidian
+        self.homeModules.nix-dev
       ];
 
       home.sessionVariables = {
@@ -30,26 +36,12 @@
         gcc
         # GNU Make build tool
         gnumake
-        # lazygit Git TUI
-        lazygit
-        # The Lua programming language (5.1 because that's what neovim wants)
-        lua5_1
-        # Lua package manager
-        lua51Packages.luarocks
-        # God's chosen text editor
-        neovim
-        # Nix formatter
-        nixfmt
         # The python programming language
         python3
         # Rust toolchain installer
         rustup
         # Signal messenger
         signal-desktop
-        # Nix linter
-        statix
-        # Lua code formatter
-        stylua
         # rar archive support
         unrar
         # archving tool
@@ -61,8 +53,9 @@
         })
         # QView image viewer
         qview
-      ];
 
-      home.stateVersion = "25.11";
+        vlc
+        nautilus
+      ];
     };
 }

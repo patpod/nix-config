@@ -1,22 +1,11 @@
 { self, inputs, ... }:
 {
   flake.nixosModules.patrick =
-    {
-      config,
-      pkgs,
-      ...
-    }:
     let
       username = "patrick";
     in
+    { pkgs, ... }:
     {
-      imports = [
-        inputs.self.nixosModules.home-manager
-      ];
-
-      # Enable zsh on system level to make it the default login shell
-      programs.zsh.enable = true;
-
       users.users."${username}" = {
         isNormalUser = true;
         description = "Patrick Podbregar";
@@ -29,17 +18,11 @@
 
       home-manager.users."${username}" = {
         imports = [
-          inputs.self.homeModules.patrick
-          inputs.self.homeModules.niri
+          inputs.self.homeModules.nixos-common
+          inputs.self.homeModules.patrick-nixos
         ];
         home.username = "${username}";
         home.homeDirectory = "/home/${username}";
-
-        # NixOS specific packages
-        home.packages = with pkgs; [
-          vlc
-          nautilus
-        ];
 
       };
     };

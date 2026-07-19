@@ -89,14 +89,21 @@
       # downloaded binaries to find their libraries.
       programs.nix-ld.enable = true;
 
+      # Enable zsh on system level to make it the default login shell
+      programs.zsh.enable = true;
+
       # Allow unfree packages
       nixpkgs.config.allowUnfree = true;
+
+      # Temporarily allow incsure packages
+      nixpkgs.config.permittedInsecurePackages = [
+        "electron-39.8.10"
+      ];
 
       # List packages installed in system profile. To search, run:
       # $ nix search wget
       environment.systemPackages = with pkgs; [
         #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-        git
         cargo
         nixfmt
         statix

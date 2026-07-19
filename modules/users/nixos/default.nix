@@ -1,8 +1,8 @@
 { inputs, ... }:
 {
-  flake.darwinModules.home-manager = {
+  flake.nixosModules.home-manager = {
     imports = [
-      inputs.home-manager.darwinModules.home-manager
+      inputs.home-manager.nixosModules.home-manager
     ];
 
     home-manager = {
