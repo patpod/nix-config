@@ -1,6 +1,5 @@
-{ self, inputs, ... }:
+{ inputs, ... }:
 {
-
   flake.darwinModules.home-manager = {
     imports = [
       inputs.home-manager.darwinModules.home-manager

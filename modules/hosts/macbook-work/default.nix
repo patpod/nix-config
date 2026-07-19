@@ -23,7 +23,7 @@
         self.darwinModules.config
         self.darwinModules.sysPackages
         self.darwinModules.home-manager
-        self.darwinModules.patrick
+        self.darwinModules.patrick-be
         {
           features.darwin.homebrew = {
             enable = true;

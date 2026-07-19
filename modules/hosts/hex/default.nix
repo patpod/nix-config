@@ -4,6 +4,7 @@
     modules = [
       inputs.nixos-hardware.nixosModules.framework-amd-ai-300-series
       self.nixosModules.hexConfiguration
+      self.nixosModules.home-manager
       self.nixosModules.patrick
       self.nixosModules.bluetooth
       self.nixosModules.sops
