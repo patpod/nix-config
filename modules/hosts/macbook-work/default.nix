@@ -30,6 +30,7 @@
             brews = [
               "kubetail"
               "opencode"
+              "podman"
             ];
             casks = [
               "connectmenow"
