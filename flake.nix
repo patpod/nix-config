@@ -6,6 +6,15 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
+    # Systems this configuration supports. Kept as a local flake so we can
+    # constrain transitive `nix-systems`-style inputs (e.g. bun2nix via hunk)
+    # to only the platforms we actually build for. This avoids evaluating
+    # `nixpkgs.legacyPackages.x86_64-darwin`, which throws on nixpkgs 26.11+.
+    systems = {
+      url = "path:./systems.nix";
+      flake = false;
+    };
+
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -67,6 +76,34 @@
     mac-app-util = {
       url = "github:hraban/mac-app-util";
     };
+
+    # Docker Homebrew Tap (used for instaling sbx)
+    docker-tap = {
+      url = "github:docker/homebrew-tap";
+      flake = false;
+    };
+
+    # Nickustinov Homebrew Tap (used for installing itsypad)
+    nickustinov-tap = {
+      url = "github:nickustinov/homebrew-tap";
+      flake = false;
+    };
+
+    # Pulumi Homebrew Tap
+    pulumi-tap = {
+      url = "github:pulumi/homebrew-tap";
+      flake = false;
+    };
+
+    # Hunk Diff Tool
+    hunk = {
+      url = "github:modem-dev/hunk";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # bun2nix (transitive) enumerates all 4 systems by default, which forces
+      # eval of `nixpkgs.legacyPackages.x86_64-darwin` — unsupported on 26.11.
+      # Restrict it to the systems we actually target.
+      inputs.bun2nix.inputs.systems.follows = "systems";
+    };
   };
 
   outputs =
@@ -78,7 +115,7 @@
         (inputs.import-tree ./modules)
       ];
 
-      systems = [
+      systems = inputs.nixpkgs.lib.mkForce [
         "x86_64-linux"
         "aarch64-darwin"
       ];

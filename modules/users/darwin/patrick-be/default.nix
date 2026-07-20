@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.darwinModules.patrick-be =
     let
@@ -22,6 +22,10 @@
           self.homeModules.nix-dev
           self.homeModules.containers
           self.homeModules.devtools
+          self.homeModules.node-dev
+          self.homeModules.markdown-dev
+          self.homeModules.python-dev
+          self.homeModules.java-dev
         ];
 
         features.home.git = {
@@ -33,6 +37,10 @@
         features.home.nix-dev.enable = true;
         features.home.containers.enable = true;
         features.home.devtools.enable = true;
+        features.home.node-dev.enable = true;
+        features.home.markdown-dev.enable = true;
+        features.home.python-dev.enable = true;
+        features.home.java-dev.enable = true;
 
         home.packages = with pkgs; [
           stow

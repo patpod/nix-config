@@ -1,7 +1,12 @@
 { self, inputs, ... }:
 {
   flake.homeModules.nix-dev =
-    { config, lib, pkgs, ... }:
+    {
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
     let
       cfg = config.features.home.nix-dev;
     in
@@ -10,7 +15,11 @@
         enable = lib.mkEnableOption "Nix language development tools";
 
         formatter = lib.mkOption {
-          type = lib.types.enum [ "nixfmt" "alejandra" "nixpkgs-fmt" ];
+          type = lib.types.enum [
+            "nixfmt"
+            "alejandra"
+            "nixpkgs-fmt"
+          ];
           default = "nixfmt";
           description = ''
             Which Nix formatter to install.
@@ -19,7 +28,10 @@
         };
 
         languageServer = lib.mkOption {
-          type = lib.types.enum [ "nixd" "nil" ];
+          type = lib.types.enum [
+            "nixd"
+            "nil"
+          ];
           default = "nixd";
           description = "Which Nix LSP server to install.";
         };
@@ -49,6 +61,8 @@
             nh
             # Pretty, parsed build output
             nix-output-monitor
+            # nil nix language server
+            nil
             # Diff between two system generations
             nvd
             # Interactive nix-store dependency explorer
