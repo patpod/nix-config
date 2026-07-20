@@ -12,6 +12,10 @@
       cfg = config.features.home.git;
     in
     {
+      imports = [
+        inputs.hunk.homeManagerModules.default
+      ];
+
       options.features.home.git = {
         enable = lib.mkEnableOption "git configuration and companion tools";
 
@@ -53,9 +57,26 @@
         programs.lazygit = {
           enable = true;
           enableZshIntegration = true;
+          settings = {
+            showGraph = "always";
+          };
+        };
+
+        programs.hunk = {
+          enable = true;
+          enableGitIntegration = true;
+
+          settings = {
+            mode = "split";
+            line_numbers = true;
+          };
         };
 
         home.packages = with pkgs; [
+          github-cli
+          gh-token
+          # Git graph visualization
+          serie
         ];
       };
     };

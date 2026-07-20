@@ -19,7 +19,10 @@
 
       config = lib.mkIf cfg.enable {
         home.packages = with pkgs; [
+          # Taskfile.dev automation
           go-task
+          # TOML toolkit
+          taplo
         ];
       };
     };
