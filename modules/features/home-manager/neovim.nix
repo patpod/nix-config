@@ -15,6 +15,7 @@
           lua51Packages.luarocks
           # Lua code formatter
           stylua
+          lua-language-server
           ripgrep
           fd
           gcc
