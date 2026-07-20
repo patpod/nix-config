@@ -24,7 +24,9 @@
         self.darwinModules.sysPackages
         self.darwinModules.home-manager
         self.darwinModules.patrick-be
+        self.darwinModules.netscope
         {
+          features.darwin.netscope.enable = true;
           features.darwin.homebrew = {
             enable = true;
             brews = [
