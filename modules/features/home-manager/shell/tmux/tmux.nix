@@ -71,9 +71,17 @@
       xdg.configFile."tmux-powerline/themes/powerline-stylix-theme.sh".source =
         pkgs.replaceVars ./powerline-stylix-theme.sh
           {
+            # Base surfaces
             default_bg = config.lib.stylix.colors.withHashtag.base00;
             selection_bg = config.lib.stylix.colors.withHashtag.base02;
             default_fg = config.lib.stylix.colors.withHashtag.base05;
+            # Additional slots for gruvbox-mapped segments (following
+            # PetrusZ/tmux-powerline-gruvbox-colorscheme's group -> segment mapping)
+            status_bg = config.lib.stylix.colors.withHashtag.base01;
+            subtle_fg = config.lib.stylix.colors.withHashtag.base04;
+            bright_bg = config.lib.stylix.colors.withHashtag.base07;
+            accent_green = config.lib.stylix.colors.withHashtag.base0B;
+            accent_yellow = config.lib.stylix.colors.withHashtag.base0A;
           };
 
       # -----------------------------------------------------------------------------

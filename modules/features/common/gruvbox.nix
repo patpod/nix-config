@@ -25,11 +25,5 @@
           applications = 11;
         };
       };
-
-      stylix.cursor = {
-        package = pkgs.capitaine-cursors-themed;
-        name = "Capitaine Cursors (Gruvbox)";
-        size = 24;
-      };
     };
 }
