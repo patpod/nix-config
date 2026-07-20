@@ -78,13 +78,16 @@ fi
 
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
   TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
-    "tmux_session_info 148 234"
-    "hostname 33 0"
+    # session: green accent on darkest background
+    "tmux_session_info @accent_green@ @default_bg@"
+    # hostname: darkest fg on bright bg, bold (see JSON "hostname" group)
+    "hostname @default_bg@ @bright_bg@"
     #"ifstat 30 255" \
     #"ifstat_sys 30 255" \
     # "lan_ip 24 255 ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}"
     # "wan_ip 24 255"
-    "vcs_branch 29 88"
+    # vcs branch: subtle fg on selection bg (JSON "branch": gray9 on gray2)
+    "vcs_branch @subtle_fg@ @selection_bg@"
     #"vcs_compare 60 255" \
     #"vcs_staged 64 255" \
     #"vcs_modified 9 255" \
@@ -95,20 +98,23 @@ fi
 if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
   TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS=(
     #"earthquake 3 0" \
-    "pwd 89 211"
+    # pwd: default fg on status bg (JSON "cwd": light1 on dark1)
+    "pwd @default_fg@ @status_bg@"
     #"macos_notification_count 29 255" \
     #"mailcount 9 255" \
     # "now_playing 234 37"
     #"cpu 240 136" \
-    "load 237 167"
+    # load: yellow accent on darkest bg (JSON "system_load_gradient")
+    "load @accent_yellow@ @default_bg@"
     #"tmux_mem_cpu_load 234 136" \
     # "battery 137 127"
     # "weather 37 255"
     #"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}" \
     #"xkb_layout 125 117" \
-    "date_day 235 136"
-    "date 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
-    "time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+    # date/time: subtle fg on darkest bg (JSON "date"/"time" groups)
+    "date_day @subtle_fg@ @default_bg@"
+    "date @subtle_fg@ @default_bg@ ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
+    "time @subtle_fg@ @default_bg@ ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}"
     #"utc_time 235 136 ${TMUX_POWERLINE_SEPARATOR_LEFT_THIN}" \
   )
 fi
