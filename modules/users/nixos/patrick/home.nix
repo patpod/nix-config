@@ -11,7 +11,7 @@
       imports = [
         self.homeModules.shell
         self.homeModules.pdf
-        self.homeModules.niri
+        # self.homeModules.niri
         self.homeModules.neovim
         self.homeModules.git
         self.homeModules.obsidian
