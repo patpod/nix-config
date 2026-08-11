@@ -9,13 +9,15 @@
       self.nixosModules.bluetooth
       self.nixosModules.sops
       self.nixosModules.tailscale
-      self.nixosModules.desktop
+      self.nixosModules.kde
       self.nixosModules.hexFingerprintReader
       self.nixosModules.smbShares
       self.nixosModules.stylix
       {
         # The host specific secrets file
         sops.defaultSopsFile = ./secrets.yaml;
+
+        features.nixos.kde.enable = true;
       }
     ];
   };
