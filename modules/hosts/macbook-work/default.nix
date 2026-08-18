@@ -73,7 +73,6 @@
               "proton-mail"
               "setapp"
               "docker/tap/sbx"
-              "signal"
               "veracrypt"
               "vivaldi"
               "nickustinov/tap/itsypad"
