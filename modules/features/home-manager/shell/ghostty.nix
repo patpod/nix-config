@@ -1,12 +1,7 @@
-{ self, inputs, ... }:
+{ inputs, ... }:
 {
   flake.homeModules.ghostty =
-    {
-      pkgs,
-      config,
-      lib,
-      ...
-    }:
+    { pkgs, ... }:
     {
       programs.ghostty = {
         enable = true;

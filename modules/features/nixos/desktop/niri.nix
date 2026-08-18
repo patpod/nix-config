@@ -13,11 +13,9 @@
 
         # Disable test for the package build because there is a test issue issue with my gpu.
         # This does not seem to have any impact on the actual runtime
-        package =
-          inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-stable.overrideAttrs
-            (oldAttrs: {
-              doCheck = false;
-            });
+        package = inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.niri-stable.overrideAttrs (_: {
+          doCheck = false;
+        });
       };
 
       environment = {
