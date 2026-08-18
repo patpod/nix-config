@@ -10,6 +10,7 @@
       self.nixosModules.sops
       self.nixosModules.tailscale
       self.nixosModules.kde
+      self.nixosModules.localsend
       self.nixosModules.hexFingerprintReader
       self.nixosModules.smbShares
       self.nixosModules.stylix
@@ -18,6 +19,7 @@
         sops.defaultSopsFile = ./secrets.yaml;
 
         features.nixos.kde.enable = true;
+        features.nixos.localsend.enable = true;
       }
     ];
   };

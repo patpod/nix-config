@@ -25,6 +25,7 @@
         self.darwinModules.home-manager
         self.darwinModules.patrick-be
         self.darwinModules.netscope
+        self.darwinModules.localsend
         self.darwinModules.stylix
         {
           # TODO Move this into the homebrew darwin module
@@ -49,6 +50,7 @@
           };
 
           features.darwin.netscope.enable = true;
+          features.darwin.localsend.enable = true;
 
           features.darwin.homebrew = {
             enable = true;
