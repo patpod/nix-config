@@ -1,4 +1,4 @@
-{ config, lib, ... }: {
+{ lib, ... }: {
 
   flake.darwinModules.netscope =
     { config, pkgs, ... }:
