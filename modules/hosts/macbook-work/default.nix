@@ -68,6 +68,7 @@
               "cryptomator"
               "docker-desktop"
               "gpg-suite"
+              "kde-connect"
               "macfuse"
               "nextcloud"
               "onedrive"
