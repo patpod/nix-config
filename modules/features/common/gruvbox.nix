@@ -1,7 +1,7 @@
 { self, inputs, ... }:
 {
   flake.commonModules.gruvbox =
-    { config, pkgs, ... }:
+    { pkgs, ... }:
     {
       stylix.image = ../../../assets/wallpapers/gruvbox-astronaut-2880x1920.png;
 

@@ -1,12 +1,7 @@
 { self, ... }:
 {
   flake.homeModules.patrick-nixos =
-    {
-      config,
-      lib,
-      pkgs,
-      ...
-    }:
+    { pkgs, ... }:
     {
       imports = [
         self.homeModules.shell

@@ -1,7 +1,7 @@
-{ config, lib, ... }: {
-
+{ lib, ... }:
+{
   flake.darwinModules.homebrew =
-    { config, pkgs, ... }:
+    { config, ... }:
     let
       cfg = config.features.darwin.homebrew;
     in
@@ -44,8 +44,7 @@
             upgrade = true;
           };
 
-          casks = cfg.casks;
-          brews = cfg.brews;
+          inherit (cfg) casks brews;
         };
 
       };

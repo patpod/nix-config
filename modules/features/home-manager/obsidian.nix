@@ -1,12 +1,10 @@
 { self, inputs, ... }:
 {
 
-  flake.homeModules.obsidian =
-    { pkgs, ... }:
-    {
-      programs.obsidian = {
-        enable = true;
-      };
+  flake.homeModules.obsidian = {
+    programs.obsidian = {
+      enable = true;
     };
+  };
 
 }
