@@ -19,6 +19,7 @@
 
       modules = [
         inputs.nix-homebrew.darwinModules.nix-homebrew
+        self.darwinModules.mac-app-util
         self.darwinModules.homebrew
         self.darwinModules.config
         self.darwinModules.sysPackages

@@ -10,10 +10,6 @@
         pkgs.coreutils
         # GNU implementation of the grep command (installed on mac for compatibility in scipts)
         pkgs.gnugrep
-        # Quick'n'dirty tool to make APFS aliases
-        # Used for making GUI apps installed with nix available in Spotlight search
-        pkgs.mkalias
-
         # Ansible - Configuration management tool
         # pkgs.ansible
         # Azure CLI - Next generation multi-platform command line experience for Azure
