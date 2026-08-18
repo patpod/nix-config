@@ -1,6 +1,6 @@
 # This modules holds generic devtools and utilities which are usually installed
 # on all my devlopment machines.
-{ self, inputs, ... }:
+{ ... }:
 {
   flake.homeModules.devtools =
     {

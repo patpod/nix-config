@@ -142,8 +142,16 @@ No conventional test suite exists. Use targeted eval/build:
   }
   ```
 
-- Outer function: `{ self, inputs, ... }:` (flake-parts module args).
-- Inner function: `{ config, lib, pkgs, ... }:` (NixOS / Darwin / HM module args).
+- Outer function: flake-parts module args. Declare only the arguments the
+  module actually uses; keep `, ...` for forward compatibility. Common shapes:
+  - `{ self, inputs, ... }:` when both are referenced.
+  - `{ self, ... }:` or `{ inputs, ... }:` when only one is referenced.
+  - `_:` when the outer scope is unused (e.g. a self-contained feature module
+    that only defines options and `config`).
+  Do not declare `self` or `inputs` if the module body does not reference
+  them; `deadnix` flags this and the repo policy is to keep it silent.
+- Inner function: `{ config, lib, pkgs, ... }:` (NixOS / Darwin / HM module
+  args). Same rule — declare only what is used; keep `, ...`.
 - Order inside the inner module: `imports` → `options` → `config`.
 
 ### Imports

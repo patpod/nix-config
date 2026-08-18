@@ -1,4 +1,4 @@
-{ self, inputs, ... }:
+{ inputs, ... }:
 {
   flake.homeModules.neovim =
     { pkgs, ... }:
