@@ -23,6 +23,8 @@
           go-task
           # TOML toolkit
           taplo
+          # Visual Studio Code
+          vscode
         ];
       };
     };
