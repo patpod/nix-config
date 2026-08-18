@@ -13,6 +13,8 @@
         self.homeModules.nix-dev
       ];
 
+      features.home.git.enable = true;
+
       home.sessionVariables = {
         EDITOR = "nvim";
         BROWSER = "vivaldi";
