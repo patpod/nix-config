@@ -22,12 +22,7 @@
           displayManager.plasma-login-manager.enable = true;
         };
 
-        environment = {
-          systemPackages = with pkgs; [
-            kdePackages.kdeconnect-kde
-          ];
-        };
-
+        programs.kdeconnect.enable = true;
       };
     };
 }
