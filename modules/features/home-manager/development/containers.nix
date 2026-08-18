@@ -31,7 +31,7 @@
           # buildah builds Linux containers using Linux namespaces, so it only
           # exists on Linux. On macOS you build inside the podman machine with
           # `podman build` instead.
-          ++ lib.optionals pkgs.stdenv.isLinux [
+          ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
             buildah
           ];
       };
