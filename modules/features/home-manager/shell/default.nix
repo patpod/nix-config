@@ -73,5 +73,11 @@
         enableZshIntegration = true;
         shellWrapperName = "y";
       };
+
+      # Automatically load environments in folders
+      programs.direnv = {
+        enable = true;
+        nix-direnv.enable = true;
+      };
     };
 }
