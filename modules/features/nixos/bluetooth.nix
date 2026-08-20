@@ -1,5 +1,4 @@
-{ ... }:
-{
+_: {
   flake.nixosModules.bluetooth = {
 
     # Enable proprietary firmware
@@ -16,9 +15,5 @@
         };
       };
     };
-
-    # Bluetooth control from within niri
-    services.blueman.enable = true;
-
   };
 }
