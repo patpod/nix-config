@@ -1,12 +1,12 @@
-{ ... }:
-{
+_: {
   flake.homeModules.fastfetch = {
 
     programs.fastfetch = {
       enable = true;
       settings = {
         logo = {
-          source = "nixos";
+          # source omitted so fastfetch auto-detects the OS logo
+          # (NixOS logo on NixOS, Apple logo on macOS).
           padding = {
             right = 1;
           };
