@@ -63,6 +63,9 @@
       # Enable CUPS to print documents.
       services.printing.enable = true;
 
+      # Enable thunderbolt
+      services.hardware.bolt.enable = true;
+
       # Enable sound with pipewire.
       services.pulseaudio.enable = false;
       security.rtkit.enable = true;
@@ -113,6 +116,8 @@
         gnumake
         lua
         lua52Packages.luarocks
+        # Add apple filesystem support to read external apfs drives
+        apfs-fuse
       ];
 
       # Some programs need SUID wrappers, can be configured further or are
