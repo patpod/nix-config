@@ -14,12 +14,14 @@
       self.nixosModules.hexFingerprintReader
       self.nixosModules.smbShares
       self.nixosModules.stylix
+      self.nixosModules.video-editing
       {
         # The host specific secrets file
         sops.defaultSopsFile = ./secrets.yaml;
 
         features.nixos.kde.enable = true;
         features.nixos.localsend.enable = true;
+        features.nixos.video-editing.enable = true;
       }
     ];
   };
