@@ -11,9 +11,11 @@
         self.homeModules.git
         self.homeModules.obsidian
         self.homeModules.nix-dev
+        self.homeModules.network-tools
       ];
 
       features.home.git.enable = true;
+      features.home.network-tools.enable = true;
 
       home.sessionVariables = {
         EDITOR = "nvim";
