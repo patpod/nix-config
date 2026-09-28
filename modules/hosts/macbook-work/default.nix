@@ -33,9 +33,11 @@
       self.darwinModules.netscope
       self.darwinModules.localsend
       self.darwinModules.stylix
+      self.darwinModules.desktop-utils
       {
         features.darwin.netscope.enable = true;
         features.darwin.localsend.enable = true;
+        features.darwin.desktop-utils.enable = true;
 
         features.darwin.homebrew = {
           enable = true;
