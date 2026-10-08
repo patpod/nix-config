@@ -51,7 +51,6 @@
             "azure-cli"
             "kubetail"
             "opencode"
-            "podman"
             "pulumi/tap/pulumi"
             "libpq"
           ];
@@ -64,7 +63,6 @@
             "macfuse"
             "nextcloud"
             "onedrive"
-            "podman-desktop"
             "proton-mail"
             "veracrypt"
             "vivaldi"
