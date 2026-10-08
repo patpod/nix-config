@@ -26,6 +26,7 @@
           self.homeModules.markdown-dev
           self.homeModules.python-dev
           self.homeModules.java-dev
+          self.homeModules.agentic-coding
         ];
 
         features.home.git = {
@@ -41,6 +42,7 @@
         features.home.markdown-dev.enable = true;
         features.home.python-dev.enable = true;
         features.home.java-dev.enable = true;
+        features.home.agentic-coding = true;
 
         home.packages = with pkgs; [
           stow

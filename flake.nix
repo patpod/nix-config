@@ -83,7 +83,7 @@
       url = "github:hraban/mac-app-util";
     };
 
-    # Docker Homebrew Tap (used for instaling sbx)
+    # Docker Homebrew Tap
     docker-tap = {
       url = "github:docker/homebrew-tap";
       flake = false;
