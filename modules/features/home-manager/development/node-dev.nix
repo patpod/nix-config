@@ -23,11 +23,6 @@
           typescript
           eslint
           prettier
-          # typescript-go ships both `tsc` and `tsgo`; its `tsc` conflicts with
-          # the classic `typescript` package's `tsc` in buildEnv. Lower its
-          # priority so classic `tsc`/`tsserver` win (versions match), while
-          # `tsgo` remains available for explicit invocation.
-          (lib.lowPrio typescript-go)
         ];
       };
     };
