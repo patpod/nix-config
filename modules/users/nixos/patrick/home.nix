@@ -12,10 +12,12 @@
         self.homeModules.obsidian
         self.homeModules.nix-dev
         self.homeModules.network-tools
+        self.homeModules.agentic-coding
       ];
 
       features.home.git.enable = true;
       features.home.network-tools.enable = true;
+      features.home.agentic-coding.enable = true;
 
       home.sessionVariables = {
         EDITOR = "nvim";
