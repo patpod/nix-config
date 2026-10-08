@@ -66,7 +66,6 @@
             "onedrive"
             "podman-desktop"
             "proton-mail"
-            "docker/tap/sbx"
             "veracrypt"
             "vivaldi"
             "nickustinov/tap/itsypad"

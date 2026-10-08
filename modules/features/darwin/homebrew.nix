@@ -63,7 +63,8 @@
           onActivation = {
             cleanup = "zap";
             autoUpdate = true;
-            upgrade = true;
+            # Docker Desktop updates itself; forced cask upgrades can fail on its privileged helpers.
+            upgrade = false;
           };
 
           taps = lib.attrNames cfg.taps;
