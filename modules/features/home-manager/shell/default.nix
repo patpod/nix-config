@@ -7,7 +7,6 @@
         self.homeModules.zsh
         self.homeModules.ghostty
         self.homeModules.tmux
-        self.homeModules.herdr
         self.homeModules.oh-my-posh
         self.homeModules.fastfetch
       ];
