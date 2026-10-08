@@ -42,7 +42,7 @@
         features.home.markdown-dev.enable = true;
         features.home.python-dev.enable = true;
         features.home.java-dev.enable = true;
-        features.home.agentic-coding = true;
+        features.home.agentic-coding.enable = true;
 
         home.packages = with pkgs; [
           stow

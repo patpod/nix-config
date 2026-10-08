@@ -22,6 +22,8 @@ _: {
           pi-coding-agent
           # Docker agent sandbox
           docker-sbx
+          # Github CoPilot CLI
+          github-copilot-cli
         ];
       };
     };
