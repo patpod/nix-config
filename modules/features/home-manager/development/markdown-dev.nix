@@ -17,7 +17,9 @@
 
       config = lib.mkIf cfg.enable {
         home.packages = with pkgs; [
+          # CLI for linting Markdown files with configurable rules.
           markdownlint-cli2
+          # Language server for Markdown editing.
           marksman
         ];
       };
