@@ -21,7 +21,8 @@ _: {
         };
 
         services.open-webui = {
-          enable = true;
+          # Disabled temporarily because a python dependency is broken (posthog)
+          enable = false;
           port = 8080;
 
           environment = {
