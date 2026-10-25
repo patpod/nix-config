@@ -10,7 +10,7 @@
           if pkgs.stdenv.hostPlatform.isDarwin then
             pkgs.ghostty-bin
           else
-            inputs.ghostty.packages.${pkgs.system}.default;
+            inputs.ghostty.packages.${pkgs.stdenv.hostPlatform.system}.default;
       };
     };
 }

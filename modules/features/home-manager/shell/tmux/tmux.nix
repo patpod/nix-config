@@ -15,7 +15,7 @@
         [
           bc
         ]
-        ++ lib.optionals stdenv.isLinux [
+        ++ lib.optionals stdenv.hostPlatform.isLinux [
           sysstat
           lm_sensors # Required to read the Ryzen CPU temperatures
         ];

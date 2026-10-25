@@ -4,7 +4,7 @@
     { pkgs, ... }:
     {
       home.packages = [
-        inputs.herdr.packages.${pkgs.system}.default
+        inputs.herdr.packages.${pkgs.stdenv.hostPlatform.system}.default
       ];
     };
 }

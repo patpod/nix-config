@@ -19,6 +19,12 @@
       features.home.network-tools.enable = true;
       features.home.agentic-coding.enable = true;
 
+      # These stylix targets emit deprecation warnings with the current inputs.
+      stylix.targets = {
+        rofi.enable = false;
+        opencode.enable = false;
+      };
+
       home.sessionVariables = {
         EDITOR = "nvim";
         BROWSER = "vivaldi";
