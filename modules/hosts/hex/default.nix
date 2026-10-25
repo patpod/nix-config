@@ -15,6 +15,7 @@
       self.nixosModules.smbShares
       self.nixosModules.stylix
       self.nixosModules.video-editing
+      self.nixosModules.llm-hosting
       self.nixosModules.printing
       {
         # The host specific secrets file
@@ -23,6 +24,7 @@
         features.nixos.kde.enable = true;
         features.nixos.localsend.enable = true;
         features.nixos.video-editing.enable = true;
+        features.nixos.llm-hosting.enable = true;
         features.nixos.printing.enable = true;
       }
     ];
