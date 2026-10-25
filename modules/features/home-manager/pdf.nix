@@ -1,21 +1,31 @@
-{ ... }:
-{
-  flake.homeModules.pdf = {
-    programs.zathura = {
-      enable = true;
+_: {
+  flake.homeModules.pdf =
+    { config, lib, ... }:
+    let
+      cfg = config.features.home.pdf;
+    in
+    {
+      options.features.home.pdf = {
+        enable = lib.mkEnableOption "PDF viewing and editing";
+      };
 
-      options = {
-        backend = "mupdf";
+      config = lib.mkIf cfg.enable {
+        programs.zathura = {
+          enable = true;
 
-        guioptions = "none";
-        statusbar-home-ttl = true;
-        scroll-step = 50;
-        selection-clipboard = "clipboard";
+          options = {
+            backend = "mupdf";
 
-        page-store-threshold = 4;
-        pages-per-row = 2;
-        first-page-column = 1;
+            guioptions = "none";
+            statusbar-home-ttl = true;
+            scroll-step = 50;
+            selection-clipboard = "clipboard";
+
+            page-store-threshold = 4;
+            pages-per-row = 2;
+            first-page-column = 1;
+          };
+        };
       };
     };
-  };
 }

@@ -1,7 +1,15 @@
 { self, ... }:
 {
   flake.homeModules.shell =
-    { pkgs, ... }:
+    {
+      config,
+      pkgs,
+      lib,
+      ...
+    }:
+    let
+      cfg = config.features.home.shell;
+    in
     {
       imports = [
         self.homeModules.zsh
@@ -11,72 +19,78 @@
         self.homeModules.fastfetch
       ];
 
-      home.packages = with pkgs; [
-        # Commandline fuzzy finder
-        fzf
-        # Rust toolchain installer
-        tree
-        # extraction utility for zip files
-        unzip
-        # Tool for retrieving files via http or ftp
-        wget
-        # Command line tool for transferring files with URL syntax
-        curl
-        # Better find
-        fd
-        # Modern ps replacement
-        procs
-        # yq - command line yaml processor
-        yq
-      ];
-
-      # Modern ls replacement
-      programs.eza = {
-        enable = true;
-        enableZshIntegration = true;
-        icons = "auto";
-        git = true;
+      options.features.home.shell = {
+        enable = lib.mkEnableOption "Shell tools and configuration";
       };
 
-      # Modern alternative for cat
-      programs.bat = {
-        enable = true;
-      };
+      config = lib.mkIf cfg.enable {
+        home.packages = with pkgs; [
+          # Commandline fuzzy finder
+          fzf
+          # Rust toolchain installer
+          tree
+          # extraction utility for zip files
+          unzip
+          # Tool for retrieving files via http or ftp
+          wget
+          # Command line tool for transferring files with URL syntax
+          curl
+          # Better find
+          fd
+          # Modern ps replacement
+          procs
+          # yq - command line yaml processor
+          yq
+        ];
 
-      # Modern top replacement
-      programs.btop = {
-        enable = true;
-        settings = {
-          theme_background = false;
-          vim_keys = true;
-          update_ms = 1000;
+        # Modern ls replacement
+        programs.eza = {
+          enable = true;
+          enableZshIntegration = true;
+          icons = "auto";
+          git = true;
         };
-      };
 
-      # Faster grep
-      programs.ripgrep.enable = true;
+        # Modern alternative for cat
+        programs.bat = {
+          enable = true;
+        };
 
-      # Commandline json and yaml parser
-      programs.jq.enable = true;
+        # Modern top replacement
+        programs.btop = {
+          enable = true;
+          settings = {
+            theme_background = false;
+            vim_keys = true;
+            update_ms = 1000;
+          };
+        };
 
-      # man replacement
-      programs.tealdeer = {
-        enable = true;
-        settings.display.compact = false;
-        settings.auto_update = true;
-      };
+        # Faster grep
+        programs.ripgrep.enable = true;
 
-      # Commandline file browser
-      programs.yazi = {
-        enable = true;
-        enableZshIntegration = true;
-        shellWrapperName = "y";
-      };
+        # Commandline json and yaml parser
+        programs.jq.enable = true;
 
-      # Automatically load environments in folders
-      programs.direnv = {
-        enable = true;
-        nix-direnv.enable = true;
+        # man replacement
+        programs.tealdeer = {
+          enable = true;
+          settings.display.compact = false;
+          settings.auto_update = true;
+        };
+
+        # Commandline file browser
+        programs.yazi = {
+          enable = true;
+          enableZshIntegration = true;
+          shellWrapperName = "y";
+        };
+
+        # Automatically load environments in folders
+        programs.direnv = {
+          enable = true;
+          nix-direnv.enable = true;
+        };
       };
     };
 }

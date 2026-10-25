@@ -3,21 +3,18 @@
   flake.homeModules.patrick-nixos =
     { pkgs, ... }:
     {
-      imports = [
-        self.homeModules.shell
-        self.homeModules.pdf
-        # self.homeModules.niri
-        self.homeModules.neovim
-        self.homeModules.git
-        self.homeModules.obsidian
-        self.homeModules.nix-dev
-        self.homeModules.network-tools
-        self.homeModules.agentic-coding
-      ];
-
-      features.home.git.enable = true;
-      features.home.network-tools.enable = true;
-      features.home.agentic-coding.enable = true;
+      features.home = {
+        shell.enable = true;
+        pdf.enable = true;
+        neovim.enable = true;
+        git.enable = true;
+        network-tools.enable = true;
+        agentic-coding.enable = true;
+        obsidian.enable = true;
+        nix-dev.enable = true;
+        containers.enable = true;
+        devtools.enable = true;
+      };
 
       # These stylix targets emit deprecation warnings with the current inputs.
       stylix.targets = {

@@ -15,34 +15,26 @@
 
         imports = [
           self.homeModules.darwin-common
-          self.homeModules.shell
-          self.homeModules.neovim
-          self.homeModules.git
-          self.homeModules.obsidian
-          self.homeModules.nix-dev
-          self.homeModules.containers
-          self.homeModules.devtools
-          self.homeModules.node-dev
-          self.homeModules.markdown-dev
-          self.homeModules.python-dev
-          self.homeModules.java-dev
-          self.homeModules.agentic-coding
         ];
 
-        features.home.git = {
-          enable = true;
-          userName = "Patrick Podbregar";
-          userEmail = "patrick.podbregar@bearingpoint.com";
-        };
+        features.home = {
+          git = {
+            enable = true;
+            userName = "Patrick Podbregar";
+            userEmail = "patrick.podbregar@bearingpoint.com";
+          };
 
-        features.home.nix-dev.enable = true;
-        features.home.containers.enable = true;
-        features.home.devtools.enable = true;
-        features.home.node-dev.enable = true;
-        features.home.markdown-dev.enable = true;
-        features.home.python-dev.enable = true;
-        features.home.java-dev.enable = true;
-        features.home.agentic-coding.enable = true;
+          shell.enable = true;
+          neovim.enable = true;
+          nix-dev.enable = true;
+          containers.enable = true;
+          devtools.enable = true;
+          node-dev.enable = true;
+          markdown-dev.enable = true;
+          python-dev.enable = true;
+          java-dev.enable = true;
+          agentic-coding.enable = true;
+        };
 
         home.packages = with pkgs; [
           stow
