@@ -24,6 +24,10 @@ _: {
           docker-sbx
           # Github CoPilot CLI
           github-copilot-cli
+          # Open Code coding agent
+          opencode
+          # Open Code Claude authentication helper
+          opencode-claude-auth
         ];
       };
     };
