@@ -37,8 +37,8 @@
                 email = "patrick.podbregar@proton.me";
                 signingKey = "personal";
                 remotes = [
-                  "git@github.com:example-user/**"
-                  "https://github.com/example-user/**"
+                  "git@github.com:patpod/**"
+                  "https://github.com/patpod/**"
                 ];
               };
             };
