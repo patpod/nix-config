@@ -28,6 +28,7 @@ _: {
                 "https://github.clap.bearingpoint.net/**"
                 "git@3banken.ghe.com:**"
                 "https://3banken.ghe.com/**"
+                "git://LHQGQ5M2XX.local/forge-cockpit-design/**"
               ];
             };
           };
