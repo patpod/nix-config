@@ -43,6 +43,9 @@
       stylix.targets = {
         rofi.enable = false;
         opencode.enable = false;
+        # Must be disabled together with the NixOS qt target: on its own the
+        # HM target falls back to qtct/kvantum, which breaks Plasma's QML shell.
+        qt.enable = false;
       };
 
       home.sessionVariables = {
