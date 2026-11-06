@@ -56,6 +56,12 @@
           agentic-coding.enable = true;
         };
 
+        # Stylix's opencode target writes `programs.opencode.tui`, which
+        # OpenCode 2 ignores (it reads a single `cli.json`), producing a
+        # warning on every evaluation. Disabled here for the same reason as in
+        # the NixOS profile; re-enable once stylix targets OpenCode 2.
+        stylix.targets.opencode.enable = false;
+
         # The rofi target sets `programs.rofi.font`, which Home Manager renamed
         # to `programs.rofi.settings.font`, so stylix emits a deprecation
         # warning. rofi is an X11 launcher and unused on macOS.
