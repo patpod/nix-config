@@ -20,8 +20,6 @@ _: {
         home.packages = with pkgs; [
           # Pi coding agent
           pi-coding-agent
-          # Docker agent sandbox
-          docker-sbx
           # Github CoPilot CLI
           github-copilot-cli
           # Open Code Claude authentication helper

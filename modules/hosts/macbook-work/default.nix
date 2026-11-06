@@ -57,6 +57,7 @@
           casks = [
             "connectmenow"
             "cryptomator"
+            "docker/tap/sbx"
             "docker-desktop"
             "kde-connect"
             "macfuse"

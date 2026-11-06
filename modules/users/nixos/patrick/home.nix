@@ -60,6 +60,8 @@
       };
 
       home.packages = with pkgs; [
+        # Docker agent sandbox
+        docker-sbx
         # Bitwarden password manager
         bitwarden-desktop
         # Commandline fuzzy finder
