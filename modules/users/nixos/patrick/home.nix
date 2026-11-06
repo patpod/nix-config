@@ -22,7 +22,7 @@
             };
             work = {
               name = "Patrick Podbregar";
-              email = "patrick@example.com";
+              email = "patrick.podbregar@bearingpoint.com";
               signingKey = "work";
               remotes = [
                 "git@github.com:example-org/**"

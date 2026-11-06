@@ -22,9 +22,37 @@ The pieces:
 
 ### Prerequisite: age key
 
-sops decrypts with your personal age key. On every machine it must exist at
-`~/.config/sops/age/keys.txt`. Copy it over before the first rebuild. If it is
-missing, activation prints a warning and skips the key import.
+sops decrypts with your personal age key. Copy it over before the first
+rebuild; if it is missing, activation prints a warning and skips the key
+import.
+
+sops resolves the default age key location through the OS config directory, so
+the path differs per platform:
+
+| Platform | Default location |
+|---|---|
+| NixOS | `~/.config/sops/age/keys.txt` |
+| macOS | `~/Library/Application Support/sops/age/keys.txt` |
+
+On macOS, `~/.config/sops/age/keys.txt` is **not** consulted by default (sops
+only uses it when `XDG_CONFIG_HOME` is set). Either place the key at the
+default path above:
+
+```sh
+mkdir -p "$HOME/Library/Application Support/sops/age"
+chmod 700 "$HOME/Library/Application Support/sops/age"
+mv <the-age-key> "$HOME/Library/Application Support/sops/age/keys.txt"
+chmod 600 "$HOME/Library/Application Support/sops/age/keys.txt"
+```
+
+or keep it under `~/.config` and export the path explicitly:
+
+```sh
+export SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt"
+```
+
+The Home Manager GPG module always exports `SOPS_AGE_KEY_FILE` before calling
+sops, so activation works regardless of the platform default.
 
 ### Add a new GPG key
 
@@ -102,5 +130,8 @@ Settings → SSH and GPG keys).
   prefix. Repositories without a remote use the default identity.
 - GPG is managed by Nix on both machines. The Homebrew `gpg-suite` cask was
   removed because it would conflict with the Home Manager managed `gpg-agent`.
-- Placeholder fingerprints and remotes in the repo must be replaced with real
-  values before signing works.
+- Placeholder `remotes` patterns in the repo (`example-user`, `example-org`)
+  must be replaced with real ones. The fingerprints in
+  `modules/users/gpg-keys.nix` are real: `personal`
+  (`patrick.podbregar@proton.me`) and `work`
+  (`patrick.podbregar@bearingpoint.com`).
