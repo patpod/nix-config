@@ -1,5 +1,4 @@
-{ self, ... }:
-{
+_: {
   flake.homeModules.patrick-nixos =
     { pkgs, ... }:
     {
@@ -25,8 +24,10 @@
               email = "patrick.podbregar@bearingpoint.com";
               signingKey = "work";
               remotes = [
-                "git@github.com:example-org/**"
-                "https://github.com/example-org/**"
+                "git@github.clap.bearingpoint.net:**"
+                "https://github.clap.bearingpoint.net/**"
+                "git@3banken.ghe.com:**"
+                "https://3banken.ghe.com/**"
               ];
             };
           };
