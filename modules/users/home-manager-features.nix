@@ -4,6 +4,8 @@
       self.homeModules.shell
       self.homeModules.pdf
       self.homeModules.neovim
+      self.homeModules.gpg
+      self.homeModules.gpg-keys
       self.homeModules.git
       self.homeModules.obsidian
       self.homeModules.nix-dev

@@ -7,7 +7,30 @@
         shell.enable = true;
         pdf.enable = true;
         neovim.enable = true;
-        git.enable = true;
+        gpg = {
+          enable = true;
+          pinentryPackage = pkgs.pinentry-qt;
+        };
+        git = {
+          enable = true;
+          defaultIdentity = "personal";
+          identities = {
+            personal = {
+              name = "Patrick Podbregar";
+              email = "patrick.podbregar@proton.me";
+              signingKey = "personal";
+            };
+            work = {
+              name = "Patrick Podbregar";
+              email = "patrick@example.com";
+              signingKey = "work";
+              remotes = [
+                "git@github.com:example-org/**"
+                "https://github.com/example-org/**"
+              ];
+            };
+          };
+        };
         network-tools.enable = true;
         agentic-coding.enable = true;
         obsidian.enable = true;

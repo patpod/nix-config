@@ -18,10 +18,30 @@
         ];
 
         features.home = {
+          gpg = {
+            enable = true;
+            pinentryPackage = pkgs.pinentry_mac;
+          };
+
           git = {
             enable = true;
-            userName = "Patrick Podbregar";
-            userEmail = "patrick.podbregar@bearingpoint.com";
+            defaultIdentity = "work";
+            identities = {
+              work = {
+                name = "Patrick Podbregar";
+                email = "patrick.podbregar@bearingpoint.com";
+                signingKey = "work";
+              };
+              personal = {
+                name = "Patrick Podbregar";
+                email = "patrick.podbregar@proton.me";
+                signingKey = "personal";
+                remotes = [
+                  "git@github.com:example-user/**"
+                  "https://github.com/example-user/**"
+                ];
+              };
+            };
           };
 
           shell.enable = true;
