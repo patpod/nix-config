@@ -56,6 +56,11 @@
           agentic-coding.enable = true;
         };
 
+        # The rofi target sets `programs.rofi.font`, which Home Manager renamed
+        # to `programs.rofi.settings.font`, so stylix emits a deprecation
+        # warning. rofi is an X11 launcher and unused on macOS.
+        stylix.targets.rofi.enable = false;
+
         home.packages = with pkgs; [
           stow
         ];
